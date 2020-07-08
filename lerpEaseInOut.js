@@ -3,8 +3,9 @@
 function lerp_easeInOut(x, power=2, center=0.5) {
 	c = power;
 	s = center;
-	p1 = 1 + c * (1 - x/s);
-	p2 = 1 - c * (1 - x/s);
+	c = c * (1 - x/s);
+	p1 = 1 + c;
+	p2 = 1 - c;
 	y = 0.5 * (Math.sin((x - 0.5) * Math.PI) + 1);
 	if (x < 0) {
 		return 0;
